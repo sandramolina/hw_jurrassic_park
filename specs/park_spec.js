@@ -54,9 +54,21 @@ describe("Park", function () {
     assert.strictEqual(actual, 2);
   });
 
-  it("should be able to calculate the total number of visitors per day");
+  it("should be able to calculate the total number of visitors per day", function () {
+    const actual = park.totalVisitorsPerDay();
+    assert.strictEqual(actual, 1550);
+  });
 
-  it("should be able to calculate the total number of visitors per year");
+  it("should be able to calculate the total number of visitors per year", function () {
+    const dailyVisitors = park.totalVisitorsPerDay();
+    const actual = park.totalVisitorsPerYear(dailyVisitors);
+    assert.strictEqual(actual, 565750);
+  });
 
-  it("should be able to calculate total revenue for one year");
+  it("should be able to calculate total revenue for one year", function () {
+    const dailyVisitors = park.totalVisitorsPerDay();
+    const yearlyVisitors = park.totalVisitorsPerYear(dailyVisitors);
+    const actual = park.calcYearlyRev(yearlyVisitors);
+    assert.strictEqual(actual, 282875000);
+  });
 });
