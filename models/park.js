@@ -49,4 +49,9 @@ Park.prototype.calcYearlyRev = function (yearlyVisitors) {
   return totalYearlyRev;
 };
 
+Park.prototype.deleteBySpecies = function (species) {
+  let newArray = this.dinos.filter((dino) => dino.species !== species);
+  this.dinos = newArray;
+};
+
 module.exports = Park;

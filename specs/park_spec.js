@@ -71,4 +71,10 @@ describe("Park", function () {
     const actual = park.calcYearlyRev(yearlyVisitors);
     assert.strictEqual(actual, 282875000);
   });
+
+  it("should be able to delete dinos by species", function () {
+    park.deleteBySpecies("Garudimimus");
+    const actual = park.dinos.length;
+    assert.strictEqual(actual, 2);
+  });
 });
