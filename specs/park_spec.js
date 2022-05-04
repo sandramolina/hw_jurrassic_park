@@ -77,4 +77,10 @@ describe("Park", function () {
     const actual = park.dinos.length;
     assert.strictEqual(actual, 2);
   });
+
+  it("should be able to return an objects with the diet type counter", function () {
+    const counter = park.dietTypeCounter();
+    const actual = counter.Herbivorous;
+    assert.strictEqual(actual, 2);
+  });
 });

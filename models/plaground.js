@@ -6,7 +6,23 @@ const dino3 = new Dinosaur("Argentinosaurus", "Herbivorous", 50);
 const dino4 = new Dinosaur("Tyrannosaurus", "Carnivorous", 1000);
 let dinos_list = [dino1, dino2, dino3, dino4];
 
-let newList = [dino1, dino2, dino3, dino4];
+const dinoDietType = { Omnivorous: 0, Herbivorous: 0, Carnivorous: 0 };
+for (let dino of dinos_list) {
+  switch (dino.diet) {
+    case "Omnivorous":
+      dinoDietType.Omnivorous += 1;
+      break;
+    case "Herbivorous":
+      dinoDietType.Herbivorous += 1;
+      break;
+    case "Carnivorous":
+      dinoDietType.Carnivorous += 1;
+      break;
+  }
+}
+console.log(dinoDietType.Herbivorous);
+
+// let newList = [dino1, dino2, dino3, dino4];
 // function test(species) {
 //   for (let dino of dinos_list) {
 //     if (dino.species === species) {
@@ -16,7 +32,7 @@ let newList = [dino1, dino2, dino3, dino4];
 //   return newList;
 // }
 //console.log("dinos1", dinos_list);
-console.log("new list 1", newList);
+// console.log("new list 1", newList);
 // function test(species) {
 //   for (let i = 0; i < dinos_list.length - 1; i++) {
 //     if (dinos_list[i].species === species) {
@@ -26,11 +42,11 @@ console.log("new list 1", newList);
 //   return newList;
 // }
 
-function test(species) {
-  let newArray = dinos_list.filter((dino) => dino.species !== species);
-  newList = newArray;
-}
+// function test(species) {
+//   let newArray = dinos_list.filter((dino) => dino.species !== species);
+//   newList = newArray;
+// }
 
-test("Argentinosaurus");
-console.log("new list 2", newList);
+// test("Argentinosaurus");
+// console.log("new list 2", newList);
 //console.log("dinos2", dinos_list);

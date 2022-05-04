@@ -49,4 +49,22 @@ Park.prototype.deleteBySpecies = function (species) {
   this.dinos = newArray;
 };
 
+Park.prototype.dietTypeCounter = function () {
+  const dinoDietType = { Omnivorous: 0, Herbivorous: 0, Carnivorous: 0 };
+  for (let dino of this.dinos) {
+    switch (dino.diet) {
+      case "Omnivorous":
+        dinoDietType.Omnivorous += 1;
+        break;
+      case "Herbivorous":
+        dinoDietType.Herbivorous += 1;
+        break;
+      case "Carnivorous":
+        dinoDietType.Carnivorous += 1;
+        break;
+    }
+  }
+  return dinoDietType;
+};
+
 module.exports = Park;
