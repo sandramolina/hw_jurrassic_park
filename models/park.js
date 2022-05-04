@@ -22,13 +22,8 @@ Park.prototype.GetDinoInfluencer = function () {
 };
 
 Park.prototype.findSpecies = function (species) {
-  let dinoBySpecie = [];
-  for (let dino of this.dinos) {
-    if (dino.species === species) {
-      dinoBySpecie.push(dino);
-    }
-  }
-  return dinoBySpecie;
+  let newArray = this.dinos.filter((dino) => dino.species === species);
+  return newArray;
 };
 
 Park.prototype.totalVisitorsPerDay = function () {
